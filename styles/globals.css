@@ -1,16 +1,34 @@
 html,
 body {
-  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+
+  color: var(--primary-text-color);
+  /* background-color: var(--primary-bg-color); */
+
+  font-family: var(--main-font-family);
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+
+  color: inherit;
 }
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --main-font-family: "Noto Sans KR", sans-serif;
+  --primary-bg-color: #e5e5e5;
+  --secondary-bg-color: #fff;
+  --primary-text-color: #3b434e;
+  --emphasis-color: #7653fc;
+  --emphasis-hover-color: #6344df;
+  --emphasis-text-color: #fff;
+  --hh-icon-color: #de0000;
+  --rating-star-color: #fc836d;
+  --green: #1dc37e;
+  --grey-light: #ebebeb;
 }
