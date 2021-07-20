@@ -1,0 +1,20 @@
+.paragraph {
+  font-weight: normal;
+
+  margin: 0;
+
+  line-height: 24px;
+}
+
+.small {
+  font-size: 14px;
+}
+
+.medium {
+  font-size: 16px;
+}
+
+.large {
+  font-size: 18px;
+  line-height: 29px;
+}
