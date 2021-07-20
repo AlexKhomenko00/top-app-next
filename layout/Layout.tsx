@@ -7,14 +7,12 @@ import React from "react";
 
 const Layout: React.FC = ({ children }): JSX.Element => {
   return (
-    <>
-      <Header />
-      <div>
-        <Sidebar />
-        <div>{children}</div>
-      </div>
-      <Footer />
-    </>
+    <div className={s.wrapper}>
+      <Header className={s.header} />
+      <Sidebar className={s.sidebar} />
+      <div className={s.body}>{children}</div>
+      <Footer className={s.footer} />
+    </div>
   );
 };
 
