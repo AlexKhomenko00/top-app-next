@@ -1,10 +1,17 @@
-export interface Advantage {
+export enum TopLevelCategory {
+  Courses,
+  Services,
+  Books,
+  Products,
+}
+
+export interface TopPageAdvantage {
   _id: string;
   title: string;
   description: string;
 }
 
-export interface Hh {
+export interface HhData {
   _id: string;
   count: number;
   juniorSalary: number;
@@ -13,7 +20,7 @@ export interface Hh {
   updatedAt: Date;
 }
 
-export interface RootObject {
+export interface TopPageModal {
   tags: string[];
   _id: string;
   secondCategory: string;
@@ -24,11 +31,9 @@ export interface RootObject {
   tagsTitle: string;
   metaTitle: string;
   metaDescription: string;
-  firstCategory: number;
-  advantages: Advantage[];
+  firstCategory: TopLevelCategory;
+  advantages: TopPageAdvantage[];
   createdAt: Date;
   updatedAt: Date;
-  __v: number;
-  hh: Hh;
-  qas: any[];
+  hh: HhData;
 }
