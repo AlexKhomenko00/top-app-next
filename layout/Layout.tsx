@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar/Sidebar";
 
 import s from "./Layout.module.css";
 import React from "react";
+import { AppContextProvider, IAppContext } from "../context/app.context";
 
 const Layout: React.FC = ({ children }): JSX.Element => {
   return (
@@ -16,14 +17,16 @@ const Layout: React.FC = ({ children }): JSX.Element => {
   );
 };
 
-export const withLayout = <T extends Record<string, unknown>>(
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(
   Component: React.FC<T>
 ) => {
   return function withLayoutComponent(props: T): JSX.Element {
     return (
-      <Layout>
-        <Component {...props} />
-      </Layout>
+      <AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      </AppContextProvider>
     );
   };
 };
