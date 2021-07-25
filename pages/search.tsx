@@ -1,13 +1,40 @@
 import React from "react";
+import { GetStaticProps } from "next";
+import axios from "axios";
+
+import { MenuItem } from "../interfaces/menu.interface";
+
 import { withLayout } from "../layout/Layout";
 
-const SearchPage = (): JSX.Element => {
+function Search(): JSX.Element {
   return (
     <div>
       <label htmlFor="search">Find something</label>
       <input type="text" name="search" id="search" />
     </div>
   );
+}
+
+export default withLayout(Search);
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const firstCategory = 0;
+
+  const { data: menu } = await axios.post<MenuItem[]>(
+    process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
+    {
+      firstCategory,
+    }
+  );
+  return {
+    props: {
+      menu,
+      firstCategory,
+    },
+  };
 };
 
-export default withLayout(SearchPage);
+interface HomeProps extends Record<string, unknown> {
+  menu: MenuItem[];
+  firstCategory: number;
+}
