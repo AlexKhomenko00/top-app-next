@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({
   if (!params) return { notFound: true };
 
   const firstCategoryItem = firstLevelMenu.find((m) => {
-    console.log(` params.type`, params.type);
+    console.log(` params.type`, params);
     console.log(`m.route`, m.route);
     return m.route === params.type;
   });
