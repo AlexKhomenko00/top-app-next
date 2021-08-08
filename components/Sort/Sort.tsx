@@ -2,7 +2,7 @@ import React from "react";
 
 import SortIcon from "./sort.svg";
 
-import SortProps, { SortEnum } from "./Sort.props";
+import { SortProps, SortEnum } from "./Sort.props";
 
 import s from "./Sort.module.css";
 import cn from "classnames";
