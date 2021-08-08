@@ -2,20 +2,13 @@ import cn from "classnames";
 
 import { TopPageComponentProps } from "./TopPageComponent.props";
 
-import {
-  Advantages,
-  HhData,
-  Htag,
-  Paragraph,
-  Sort,
-  Tag,
-} from "../../components";
+import { Advantages, HhData, Htag, Sort, Tag } from "../../components";
 
 import s from "./TopPageComponent.module.css";
 import { TopLevelCategory } from "../../interfaces/page.interface";
 import { SortEnum } from "../../components/Sort/Sort.props";
 import { useReducer } from "react";
-import { sortReducer, SortReducerState } from "./sort.reducer";
+import { sortReducer } from "./sort.reducer";
 
 const TopPageComponent: React.FC<TopPageComponentProps> = ({
   page,
