@@ -2,7 +2,7 @@ import cn from "classnames";
 
 import { TopPageComponentProps } from "./TopPageComponent.props";
 
-import { HhData, Htag, Tag } from "../../components";
+import { Advantages, HhData, Htag, Paragraph, Tag } from "../../components";
 
 import s from "./TopPageComponent.module.css";
 import { TopLevelCategory } from "../../interfaces/page.interface";
@@ -35,9 +35,17 @@ const TopPageComponent: React.FC<TopPageComponentProps> = ({
       )}
       {page.advantages && page.advantages.length && (
         <>
-          <Htag tag="h2" title="Преимущества" />
+          <Htag tag="h2">Преимущества </Htag>
+          <Advantages advantages={page.advantages} />
         </>
       )}
+      {page.seoText && <Paragraph>{page.seoText}</Paragraph>}
+      <Htag tag="h2">Получаемые навыки </Htag>
+      {page.tags.map((tag) => (
+        <Tag color="primary" key={tag}>
+          {tag}
+        </Tag>
+      ))}
     </div>
   );
 };
