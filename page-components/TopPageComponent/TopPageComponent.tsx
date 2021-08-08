@@ -39,7 +39,12 @@ const TopPageComponent: React.FC<TopPageComponentProps> = ({
           <Advantages advantages={page.advantages} />
         </>
       )}
-      {page.seoText && <Paragraph>{page.seoText}</Paragraph>}
+      {page.seoText && (
+        <div
+          className={s.seo}
+          dangerouslySetInnerHTML={{ __html: page.seoText }}
+        />
+      )}
       <Htag tag="h2">Получаемые навыки </Htag>
       {page.tags.map((tag) => (
         <Tag color="primary" key={tag}>
