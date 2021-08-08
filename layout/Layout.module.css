@@ -41,4 +41,7 @@
   .sidebar {
     display: none;
   }
+  .body {
+    padding: 15px;
+  }
 }
