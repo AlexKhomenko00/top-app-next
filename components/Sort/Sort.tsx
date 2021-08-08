@@ -29,7 +29,7 @@ const Sort = ({
           [s.active]: sort === SortEnum.Price,
         })}
       >
-        <SortIcon className={s.sortIcon} /> По цене
+        <SortIcon className={s.sortIcon} /> По&nbsp;цене
       </span>
     </div>
   );
