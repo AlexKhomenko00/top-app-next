@@ -14,7 +14,7 @@
   gap: 20px;
 }
 
-.h1 {
+.seo h1 {
   margin: 0;
 
   font-size: 26px;
@@ -22,7 +22,7 @@
   line-height: 35px;
 }
 
-.h2 {
+.seo h2 {
   margin-top: 50px;
   margin-bottom: 25px;
 
@@ -31,7 +31,7 @@
   line-height: 30px;
 }
 
-.h3 {
+.seo h3 {
   margin: 0;
 
   font-size: 20px;
