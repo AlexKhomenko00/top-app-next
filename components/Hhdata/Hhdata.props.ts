@@ -1,6 +1,3 @@
-import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { HhData } from "../../interfaces/page.interface";
 
-export interface CardProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  color?: "white" | "blue";
-}
+export interface HhDataProps extends HhData {}
