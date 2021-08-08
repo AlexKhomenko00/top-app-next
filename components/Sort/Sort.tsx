@@ -18,7 +18,7 @@ const Sort = ({
       <span
         onClick={() => setSort(SortEnum.Rating)}
         className={cn({
-          [s.active]: sort === SortEnum.Rating,
+          [s.active]: sort == SortEnum.Rating,
         })}
       >
         <SortIcon className={s.sortIcon} /> По рейтингу
@@ -26,10 +26,10 @@ const Sort = ({
       <span
         onClick={() => setSort(SortEnum.Price)}
         className={cn({
-          [s.active]: sort === SortEnum.Price,
+          [s.active]: sort == SortEnum.Price,
         })}
       >
-        <SortIcon className={s.sortIcon} /> По&nbsp;цене
+        <SortIcon className={s.sortIcon} /> По цене
       </span>
     </div>
   );
