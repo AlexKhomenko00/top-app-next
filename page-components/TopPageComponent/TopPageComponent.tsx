@@ -2,9 +2,10 @@ import cn from "classnames";
 
 import { TopPageComponentProps } from "./TopPageComponent.props";
 
-import { Card, Htag, Tag } from "../../components";
+import { HhData, Htag, Tag } from "../../components";
 
 import s from "./TopPageComponent.module.css";
+import { TopLevelCategory } from "../../interfaces/page.interface";
 
 const TopPageComponent: React.FC<TopPageComponentProps> = ({
   page,
@@ -29,12 +30,14 @@ const TopPageComponent: React.FC<TopPageComponentProps> = ({
           hh.ru
         </Tag>
       </div>
-      <div className={s.hh}>
-        <Card className={s.hhCount}>
-          <div className={s.hhStatTitle}>Всего вакансий</div>
-          <div className={s.hhStatCount}>{page.hh.count}</div>
-        </Card>
-      </div>
+      {firstCategory == TopLevelCategory.Courses && page.hh && (
+        <HhData {...page.hh} />
+      )}
+      {page.advantages && page.advantages.length && (
+        <>
+          <Htag tag="h2" title="Преимущества" />
+        </>
+      )}
     </div>
   );
 };
