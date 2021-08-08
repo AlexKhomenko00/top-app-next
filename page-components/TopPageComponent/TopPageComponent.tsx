@@ -2,10 +2,18 @@ import cn from "classnames";
 
 import { TopPageComponentProps } from "./TopPageComponent.props";
 
-import { Advantages, HhData, Htag, Paragraph, Tag } from "../../components";
+import {
+  Advantages,
+  HhData,
+  Htag,
+  Paragraph,
+  Sort,
+  Tag,
+} from "../../components";
 
 import s from "./TopPageComponent.module.css";
 import { TopLevelCategory } from "../../interfaces/page.interface";
+import { SortEnum } from "../../components/Sort/Sort.props";
 
 const TopPageComponent: React.FC<TopPageComponentProps> = ({
   page,
@@ -21,7 +29,7 @@ const TopPageComponent: React.FC<TopPageComponentProps> = ({
             {products.length}
           </Tag>
         )}
-        <span>Сортировка</span>
+        <Sort sort={SortEnum.Rating} setSort={() => {}} />
       </div>
       {products && products.map((p) => <div key={p._id}>{p.title}</div>)}
       <div className={s.hhTitle}>
