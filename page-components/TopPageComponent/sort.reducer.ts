@@ -22,7 +22,7 @@ export const sortReducer = (
       };
     case SortEnum.Price:
       return {
-        sort: SortEnum.Rating,
+        sort: SortEnum.Price,
         products: state.products.sort((a, b) => (a.price > b.price ? -1 : 1)),
       };
     default:
