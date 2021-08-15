@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import { useState } from "react";
 import axios from "axios";
 
-import { Rating, Tag } from "../components/";
+import { Input, Rating, Tag } from "../components/";
 import { withLayout } from "../layout/Layout";
 import { MenuItem } from "../interfaces/menu.interface";
 
@@ -21,6 +21,7 @@ const Home = ({ menu, firstCategory }: HomeProps): JSX.Element => {
       <Tag color="green">Medium Green</Tag>
       <Tag color="primary">Medium Primary</Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
+      <Input placeholder="Name" />
     </>
   );
 };
